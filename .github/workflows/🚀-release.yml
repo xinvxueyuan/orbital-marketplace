@@ -1,0 +1,63 @@
+name: 🚀 Release
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    name: 📦 Build release assets
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+
+      - name: ⚡ Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: 📦 Install frontend dependencies
+        run: npm ci
+
+      - name: 🏗️ Build frontend
+        run: npm run build
+
+      - name: 📦 Package dist
+        run: tar -czf orbital-dist-${{ github.ref_name }}.tar.gz -C dist .
+
+      - name: 📤 Upload dist artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-dist
+          path: dist
+
+  release:
+    name: 🚀 Create GitHub Release
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+
+      - name: 📥 Download dist artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: release-dist
+          path: dist
+
+      - name: 📦 Package dist
+        run: tar -czf orbital-dist-${{ github.ref_name }}.tar.gz -C dist .
+
+      - name: 🚀 Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          fail_on_unmatched_files: false
+          files: |
+            orbital-dist-${{ github.ref_name }}.tar.gz

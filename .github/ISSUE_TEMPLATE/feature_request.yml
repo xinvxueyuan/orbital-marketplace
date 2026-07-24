@@ -1,0 +1,53 @@
+name: ✨ 功能建议
+description: 提出新功能或对现有行为的改进建议
+title: "[Feature]: "
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你提出功能建议！
+        请尽量描述清楚问题与期望方案，便于维护者评估与讨论。
+  - type: textarea
+    id: problem
+    attributes:
+      label: 想解决的问题
+      description: 你当前遇到什么问题或感到不便？这个建议解决了什么场景？
+      placeholder: "例如：发卡页无法按状态筛选，找已兑换卡密很麻烦。"
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: 期望的方案
+      description: 你希望怎么解决？描述期望的交互或接口形态。
+      placeholder: "例如：在发卡页顶部增加状态筛选下拉框，默认显示全部。"
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 替代方案
+      description: 你考虑过哪些替代方案？为什么没有选它们？
+  - type: textarea
+    id: additional
+    attributes:
+      label: 补充信息
+      description: 截图、草图、参考实现、相关链接等其他信息。
+  - type: dropdown
+    id: area
+    attributes:
+      label: 涉及区域
+      description: 选择最接近的一项（可后续讨论调整）。
+      options:
+        - 前端 — UI / 交互
+        - 前端 — 路由 / 导航
+        - 后端 — API
+        - 后端 — 数据模型
+        - 发卡机制
+        - 文档站
+        - 构建 / CI / 部署
+        - 其他
+      default: 0
+    validations:
+      required: true

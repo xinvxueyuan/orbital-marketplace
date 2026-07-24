@@ -1,0 +1,42 @@
+# CODEOWNERS — 按路径路由 Pull Request 的审查请求。
+# 格式: <path-pattern> @<owner> [@<another-owner> ...]
+# 参见 https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# 前端源码
+/src/                                 @xinvxueyuan
+/public/                              @xinvxueyuan
+
+# 后端源码
+/backend/                             @xinvxueyuan
+
+# 构建配置与清单
+/package.json                         @xinvxueyuan
+/package-lock.json                    @xinvxueyuan
+/vite.config.js                       @xinvxueyuan
+/tailwind.config.js                   @xinvxueyuan
+/postcss.config.js                    @xinvxueyuan
+/backend/requirements.txt             @xinvxueyuan
+/pyproject.toml                       @xinvxueyuan
+
+# 容器与编排
+/Dockerfile                           @xinvxueyuan
+/docker-compose.yml                   @xinvxueyuan
+
+# GitHub 配置、工作流、issue 与 PR 模板
+/.github/                             @xinvxueyuan
+
+# 许可与策略文件
+/LICENSE                              @xinvxueyuan
+/LICENSE-APACHE                       @xinvxueyuan
+/NOTICE                               @xinvxueyuan
+
+# 文档
+/README.md                            @xinvxueyuan
+/README-zh.md                         @xinvxueyuan
+/CONTRIBUTING.md                      @xinvxueyuan
+/CHANGELOG.md                         @xinvxueyuan
+/SECURITY.md                          @xinvxueyuan
+/CODE_OF_CONDUCT.md                   @xinvxueyuan
+
+# 兜底 — 其余路径由维护者负责
+*                                     @xinvxueyuan

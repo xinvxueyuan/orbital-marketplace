@@ -1,0 +1,59 @@
+Orbital — Application Marketplace SPA
+SPDX-License-Identifier: MIT OR Apache-2.0
+
+Copyright (c) 2025 xinvxueyuan (xinvStar.inc)
+
+================================================================================
+License
+================================================================================
+
+This project is dual-licensed under the MIT License and the Apache License,
+Version 2.0. You may use this project under the terms of either license at
+your option.
+
+  - MIT License:        see LICENSE
+  - Apache License 2.0: see LICENSE-APACHE
+
+When redistributing the Work or Derivative Works, you may choose to comply
+with either the MIT terms or the Apache-2.0 terms (or both). You are not
+required to comply with both simultaneously; pick one.
+
+SPDX short identifier: `MIT OR Apache-2.0`
+
+================================================================================
+Third-Party Dependencies
+================================================================================
+
+The following third-party dependencies are used by this project. Each
+dependency retains its own license; the table below is informational and
+does not override any upstream terms.
+
+Frontend (Node / npm)
+---------------------
+  - react               — MIT License
+  - react-dom           — MIT License
+  - react-router        — MIT License
+  - vite                — MIT License
+  - @vitejs/plugin-react — MIT License
+  - tailwindcss         — MIT License
+  - postcss             — MIT License
+  - autoprefixer        — MIT License
+  - framer-motion       — MIT License
+
+Backend (Python)
+----------------
+  - fastapi             — MIT License
+  - uvicorn             — BSD-3-Clause License
+  - sqlalchemy          — MIT License
+  - pydantic            — MIT License
+
+================================================================================
+Attribution
+================================================================================
+
+This NOTICE file is provided in accordance with Section 4(d) of the Apache
+License, Version 2.0. Its contents are for informational purposes only and
+do not modify the License. Derivative Works distributed under the Apache-2.0
+terms must include a readable copy of the attribution notices above.
+
+Project home: https://github.com/xinvxueyuan/orbital

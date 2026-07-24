@@ -1,0 +1,34 @@
+# Orbital — ruff 与 pytest 配置
+# 本项目以 backend/requirements.txt 管理运行时依赖，此处仅配置开发工具。
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = [
+  "node_modules",
+  "dist",
+  ".venv",
+]
+
+[tool.ruff.lint]
+select = [
+  "E",   # pycodestyle errors
+  "W",   # pycodestyle warnings
+  "F",   # pyflakes
+  "I",   # isort
+  "B",   # flake8-bugbear
+  "UP",  # pyupgrade
+]
+ignore = [
+  "E501",  # 行长由 formatter 处理
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["backend/tests"]
+python_files = ["test_*.py"]
+addopts = "-ra -q"

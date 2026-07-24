@@ -1,0 +1,62 @@
+# ── Node / 前端 ───────────────────────────────────────────────
+node_modules/
+dist/
+.vite/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ── Python / 后端 ─────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+venv/
+env/
+ENV/
+*.egg-info/
+.eggs/
+build/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# ── SQLite ────────────────────────────────────────────────────
+backend/orbital.db
+backend/orbital.db-journal
+backend/orbital.db-wal
+backend/orbital.db-shm
+*.sqlite
+*.sqlite3
+
+# ── 环境变量 ──────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── 操作系统 ──────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── 编辑器 / IDE ──────────────────────────────────────────────
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+*.swo
+*~
+
+# ── 日志 / 临时 ───────────────────────────────────────────────
+*.log
+tmp/
+.temp/
+
+# ── 工作流内部文件 / 无关产物 ─────────────────────────────────
+.trae/
+apsidal-whisper/

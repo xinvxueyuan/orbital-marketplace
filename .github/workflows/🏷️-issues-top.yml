@@ -1,0 +1,31 @@
+name: 🏷️ Issue Triage
+on:
+  issues:
+    types: [opened]
+  pull_request:
+    types: [opened]
+permissions:
+  issues: write
+  pull-requests: write
+jobs:
+  triage:
+    name: 🏷️ Add triage label
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🏷️ Add triage label
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const target = context.eventName === 'pull_request' ? 'issues' : 'issues';
+            const number = context.issue.number || context.payload.pull_request?.number;
+            if (!number) {
+              core.info('No issue/PR number found, skipping.');
+              return;
+            }
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: number,
+              labels: ['triage'],
+            });
+            core.info(`Added 'triage' label to #${number}`);

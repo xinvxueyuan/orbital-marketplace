@@ -1,0 +1,12 @@
+services:
+  web:
+    build: .
+    image: orbital-marketplace
+    container_name: orbital-web
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///backend/orbital.db
+      - CORS_ORIGINS=http://localhost:5173,http://localhost:4173
+      - DEMO_USER_ID=demo
+    restart: unless-stopped
