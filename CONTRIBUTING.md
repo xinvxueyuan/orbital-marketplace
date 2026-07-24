@@ -17,7 +17,7 @@
 1. 克隆仓库并进入目录：
 
    ```bash
-   git clone https://github.com/xinvxueyuan/orbital.git
+   git clone https://github.com/xinvxueyuan/orbital-marketplace.git
    cd orbital
    ```
 

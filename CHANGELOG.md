@@ -33,5 +33,5 @@
 - 使用 Framer Motion 实现路由过渡动画
 - 前端开发服务器（Vite）代理 `/api` → 后端 `:8000`
 
-[Unreleased]: https://github.com/xinvxueyuan/orbital/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/xinvxueyuan/orbital/releases/tag/v1.0.0
+[Unreleased]: https://github.com/xinvxueyuan/orbital-marketplace/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/xinvxueyuan/orbital-marketplace/releases/tag/v1.0.0

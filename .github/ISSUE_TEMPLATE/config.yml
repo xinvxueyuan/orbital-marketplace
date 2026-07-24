@@ -2,10 +2,10 @@
 blank_issues_enabled: false
 contact_links:
   - name: 📖 Orbital 文档
-    url: https://github.com/xinvxueyuan/orbital#readme
+    url: https://github.com/xinvxueyuan/orbital-marketplace#readme
     about: 开 issue 前请先查阅 README 与文档站，答案可能已经在那里。
   - name: 🔒 报告安全漏洞
-    url: https://github.com/xinvxueyuan/orbital/security/advisories/new
+    url: https://github.com/xinvxueyuan/orbital-marketplace/security/advisories/new
     about: 请通过 GitHub 私密漏洞报告而非公开 issue 上报安全问题。详见 SECURITY.md 中的范围与 SLA。
   - name: 💬 私下联系维护者
     url: https://github.com/xinvxueyuan

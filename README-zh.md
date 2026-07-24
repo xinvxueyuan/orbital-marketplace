@@ -2,9 +2,9 @@
 
 > [English](README.md) | 中文
 
-[![CI Builds](https://github.com/xinvxueyuan/orbital/actions/workflows/%F0%9F%91%B7-ci-builds.yml/badge.svg)](https://github.com/xinvxueyuan/orbital/actions/workflows/%F0%9F%91%B7-ci-builds.yml)
-[![前端 CI](https://github.com/xinvxueyuan/orbital/actions/workflows/%F0%9F%A7%AA-frontend.yml/badge.svg)](https://github.com/xinvxueyuan/orbital/actions/workflows/%F0%9F%A7%AA-frontend.yml)
-[![Python CI](https://github.com/xinvxueyuan/orbital/actions/workflows/%F0%9F%A7%AA-python.yml/badge.svg)](https://github.com/xinvxueyuan/orbital/actions/workflows/%F0%9F%A7%AA-python.yml)
+[![CI Builds](https://github.com/xinvxueyuan/orbital-marketplace/actions/workflows/%F0%9F%91%B7-ci-builds.yml/badge.svg)](https://github.com/xinvxueyuan/orbital-marketplace/actions/workflows/%F0%9F%91%B7-ci-builds.yml)
+[![前端 CI](https://github.com/xinvxueyuan/orbital-marketplace/actions/workflows/%F0%9F%A7%AA-frontend.yml/badge.svg)](https://github.com/xinvxueyuan/orbital-marketplace/actions/workflows/%F0%9F%A7%AA-frontend.yml)
+[![Python CI](https://github.com/xinvxueyuan/orbital-marketplace/actions/workflows/%F0%9F%A7%AA-python.yml/badge.svg)](https://github.com/xinvxueyuan/orbital-marketplace/actions/workflows/%F0%9F%A7%AA-python.yml)
 [![License](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue)](#许可)
 [![React](https://img.shields.io/badge/React-18-61dafb)](https://react.dev/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-latest-009688)](https://fastapi.tiangolo.com/)

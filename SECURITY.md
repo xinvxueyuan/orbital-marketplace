@@ -14,7 +14,7 @@ Orbital 处于活跃开发中。安全修复仅针对最新发布版本提供。
 我们非常重视 Orbital 的安全问题。如果你发现安全漏洞，请**不要**通过公开 issue 报告，而是按以下流程私下披露：
 
 1. 优先使用 GitHub 私密漏洞报告：
-   前往 <https://github.com/xinvxueyuan/orbital/security/advisories/new> 提交。
+   前往 <https://github.com/xinvxueyuan/orbital-marketplace/security/advisories/new> 提交。
 2. 如无法使用上述方式，发送邮件至维护者：在 commit 历史或个人资料中联系 [@xinvxueyuan](https://github.com/xinvxueyuan)。
 
 报告时请尽量包含：
