@@ -53,31 +53,26 @@ jobs:
           echo "server did not start in time" >&2; exit 1
 
       - name: 🧪 Smoke test API
-        run: >
-          set -e;
-
-          echo "== health ==";
-          curl -fsS http://127.0.0.1:8000/api/v1/health;
-
-          echo "== apps ==";
-          curl -fsS 'http://127.0.0.1:8000/api/v1/apps' | head -c 200;
-          echo;
-
-          echo "== cards (available) ==";
-          curl -fsS 'http://127.0.0.1:8000/api/v1/cards?status=available' | head -c 200;
-          echo;
-
-          echo "== auto-issue ==";
-          AUTO=$(curl -fsS -X POST http://127.0.0.1:8000/api/v1/cards/auto-issue
-            -H 'Content-Type: application/json'
-            -d '{"appId":"nova-studio","planId":"pro","type":"subscription","price":12,"buyer":"ci@orbital.dev"}');
-          echo "$AUTO" | head -c 300;
-          echo;
-
-          echo "== redeem ==";
-          CODE=$(echo "$AUTO" | jq -r '.card.code');
-          curl -fsS -X POST http://127.0.0.1:8000/api/v1/cards/redeem
-            -H 'Content-Type: application/json'
+        run: |
+          set -e
+          echo "== health =="
+          curl -fsS http://127.0.0.1:8000/api/v1/health
+          echo "== apps =="
+          curl -fsS 'http://127.0.0.1:8000/api/v1/apps' | head -c 200
+          echo
+          echo "== cards (available) =="
+          curl -fsS 'http://127.0.0.1:8000/api/v1/cards?status=available' | head -c 200
+          echo
+          echo "== auto-issue =="
+          AUTO=$(curl -fsS -X POST http://127.0.0.1:8000/api/v1/cards/auto-issue \
+            -H 'Content-Type: application/json' \
+            -d '{"appId":"nova-studio","planId":"pro","type":"subscription","price":12,"buyer":"ci@orbital.dev"}')
+          echo "$AUTO" | head -c 300
+          echo
+          echo "== redeem =="
+          CODE=$(echo "$AUTO" | jq -r '.card.code')
+          curl -fsS -X POST http://127.0.0.1:8000/api/v1/cards/redeem \
+            -H 'Content-Type: application/json' \
             -d "{\"code\": \"$CODE\"}"
 
       - name: 🛑 Stop server
