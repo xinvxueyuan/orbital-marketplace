@@ -12,6 +12,8 @@
 [![Vite](https://img.shields.io/badge/Vite-5-646CFF)](https://vitejs.dev/)
 [![Gitmoji](https://img.shields.io/badge/gitmoji-%20%F0%9F%98%9C%20%F0%9F%98%8D-FFDD67.svg?style=flat-square)](https://gitmoji.dev/)
 
+🌐 **在线演示**：https://xinvxueyuan.github.io/orbital-marketplace/ （GitHub Pages，由 `main` 分支通过 [`📚-docs.yml`](.github/workflows/%F0%9F%93%9A-docs.yml) 工作流构建）
+
 **Orbital**（包名 `orbital-marketplace`）是一款单页应用（SPA）商城，把应用发现、下载、许可证、更新、订阅、发卡机制与文档站整合在统一的 SPA 体验中。前端是基于 Vite 的 React SPA；后端是基于 SQLAlchemy 2.0 与 SQLite 的 FastAPI 服务，在 `/api/v1` 下提供 RESTful API。
 
 ## 项目状态

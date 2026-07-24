@@ -12,6 +12,8 @@
 [![Vite](https://img.shields.io/badge/Vite-5-646CFF)](https://vitejs.dev/)
 [![Gitmoji](https://img.shields.io/badge/gitmoji-%20%F0%9F%98%9C%20%F0%9F%98%8D-FFDD67.svg?style=flat-square)](https://gitmoji.dev/)
 
+🌐 **Live demo**: https://xinvxueyuan.github.io/orbital-marketplace/ (GitHub Pages, built from `main` via the [`📚-docs.yml`](.github/workflows/%F0%9F%93%9A-docs.yml) workflow)
+
 **Orbital** (package name `orbital-marketplace`) is a single-page application marketplace that bundles app discovery, downloads, licensing, updates, subscriptions, a card-key (vending) mechanism, and a documentation site into one cohesive SPA experience. The frontend is a Vite-powered React SPA; the backend is a FastAPI service backed by SQLAlchemy 2.0 and SQLite, exposing a RESTful API under `/api/v1`.
 
 ## Project status
