@@ -48,6 +48,14 @@ Orbital 处于活跃开发中。安全修复仅针对最新发布版本提供。
 - 对未启用认证的演示部署进行的常规扫描报告
 - 社会工程学攻击
 
+## 已知告警说明
+
+以下 Dependabot 告警经评估为**不适用**于本仓库，已在 GitHub UI 中标注（如 token 权限允许则自动 dismiss）：
+
+| 告警 | 受影响范围 | 不适用原因 |
+|------|-----------|-----------|
+| [GHSA-qwww-vcr4-c8h2](https://github.com/advisories/GHSA-qwww-vcr4-c8h2) — React Router RSC Mode CSRF Bypass | `react-router@7.12.0 - 8.2.0` | 本仓库使用 `BrowserRouter`（客户端 SPA 模式），未启用 RSC（React Server Components）。该 CSRF 仅在 RSC 模式下可被利用。修复需升级到 `react-router@8.3+`（要求 React 19 + Node 22+），留待后续 React 19 迁移。 |
+
 ## 联系方式
 
 - 维护者：[@xinvxueyuan](https://github.com/xinvxueyuan)
