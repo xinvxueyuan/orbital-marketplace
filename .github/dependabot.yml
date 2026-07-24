@@ -46,3 +46,17 @@ updates:
     labels:
       - "dependencies"
       - "pip"
+
+  # GitHub Actions 工作流依赖（.github/workflows 目录）
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "⬆️ build(deps)"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "github-actions"
