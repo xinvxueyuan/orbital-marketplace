@@ -1,0 +1,35 @@
+export const meta = {
+  slug: "api-webhooks",
+  category: "api",
+  title: "Webhooks",
+  summary: "订阅订单、发卡、退款等事件。",
+  updatedAt: "2025-07-21",
+  order: 22,
+};
+
+## 事件类型
+
+支持 `order.completed`、`card.issued`、`card.redeemed`、`subscription.renewed`、`refund.created` 等事件。
+
+## Webhook 载荷
+
+所有事件使用统一信封格式：
+
+```json
+{
+  "id": "evt_01HZX...",
+  "type": "order.completed",
+  "createdAt": "2025-07-22T08:30:00Z",
+  "data": {
+    "orderId": "o104",
+    "appId": "nova-studio",
+    "planId": "pro",
+    "cardId": "c005",
+    "price": 12
+  }
+}
+```
+
+## 签名校验
+
+每个 Webhook 携带 `X-Orbital-Signature` 头，值为 `HMAC-SHA256(secret, body)`。请务必校验以防止伪造。

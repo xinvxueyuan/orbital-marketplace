@@ -1,0 +1,83 @@
+export const meta = {
+  slug: "overview",
+  category: "project",
+  title: "项目概览",
+  summary: "Orbital 是一款整合应用发现、下载、订阅、发卡与文档的单页应用商城。",
+  updatedAt: "2025-07-24",
+  order: 60,
+};
+
+**Orbital**（包名 `orbital-marketplace`）是一款单页应用（SPA）商城，把应用发现、下载、许可证、更新、订阅、发卡机制与文档站整合在统一的体验中。前端是基于 Vite 的 React SPA；后端是基于 SQLAlchemy 2.0 与 SQLite 的 FastAPI 服务，在 `/api/v1` 下提供 RESTful API。
+
+## 项目状态
+
+Orbital 已发布 `1.0.0` 里程碑。当前版本交付了发卡机制、文档站、FastAPI 后端以及 React Router v8 / React 19 / Tailwind v4 / Vite 8 迁移。API 与路由面已稳定，后续工作聚焦于加固、测试与运维工具。
+
+## 特性
+
+- **发现与浏览** — 发现页/浏览页提供精选应用、分类筛选、搜索与排序。
+- **应用详情** — 截图、版本历史、定价方案、许可证模型与更新说明。
+- **订阅与授权** — 按席位订阅、永久授权、试用档位，以及聚合的订阅页。
+- **更新** — 渠道感知的更新追踪，包含 from→to 版本差异与发布说明。
+- **发卡机制** — 批量生成卡密、购买时自动发卡、兑换与作废，基于 `available → sold → redeemed → void` 状态机。
+- **资料库** — 单用户演示资料库，展示已拥有应用、安装状态与卡密兑换。
+- **文档站** — 基于 React Router v8 framework mode（SSG）构建的独立文档站点，托管于 GitHub Pages。
+
+## 技术栈
+
+**前端**
+
+- React 19
+- React Router v8（库模式 SPA）
+- Vite 8
+- Tailwind CSS v4（CSS-first 配置）
+- Framer Motion v12
+
+**后端**
+
+- FastAPI（最新）
+- SQLAlchemy 2.0
+- Pydantic v2
+- SQLite
+
+**文档站**
+
+- React Router v8 framework mode（SPA + SSG 预渲染）
+- MDX（Markdown + JSX 组件）
+- Tailwind CSS v4
+
+## 快速开始
+
+> 需要 Node.js 22+ 与 Python 3.11+。
+
+### 前端
+
+```bash
+npm install
+npm run dev      # http://localhost:5173（代理 /api → http://localhost:8000）
+npm run build    # 生产构建 → dist/
+```
+
+### 后端
+
+```bash
+pip install -r backend/requirements.txt
+python -m backend.seed                                    # 写入 SQLite 种子数据（幂等）
+uvicorn backend.app.main:app --reload                     # http://localhost:8000
+```
+
+### 文档站
+
+```bash
+cd docs-site
+npm install
+npm run dev      # 本地开发预览
+npm run build    # SSG 静态构建 → build/client/
+```
+
+## 项目结构
+
+- `src/` — 前端 SPA 源码
+- `backend/` — FastAPI 后端
+- `docs-site/` — React Router v8 文档站点（本站）
+- `.github/workflows/` — CI/CD 工作流

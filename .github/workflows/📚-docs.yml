@@ -4,12 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "src/**"
-      - "public/**"
-      - "index.html"
-      - "vite.config.js"
-      - "package.json"
-      - "package-lock.json"
+      - "docs-site/**"
       - ".github/workflows/📚-docs.yml"
 permissions:
   contents: read
@@ -20,8 +15,11 @@ concurrency:
   cancel-in-progress: true
 jobs:
   build:
-    name: 🏗️ Build SPA
+    name: 🏗️ Build docs (React Router v8 SSG)
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: docs-site
     steps:
       - name: 📥 Checkout
         uses: actions/checkout@v4
@@ -31,17 +29,18 @@ jobs:
         with:
           node-version: 22
           cache: npm
+          cache-dependency-path: docs-site/package-lock.json
 
       - name: 📦 Install dependencies
         run: npm ci
 
-      - name: 🏗️ Build
+      - name: 🏗️ Build & prerender
         run: npm run build
 
       - name: 📤 Upload Pages artifact
         uses: actions/upload-pages-artifact@v5
         with:
-          path: dist
+          path: docs-site/build/deploy
 
   deploy:
     name: 🚀 Deploy to GitHub Pages

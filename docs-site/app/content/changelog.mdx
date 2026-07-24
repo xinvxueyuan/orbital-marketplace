@@ -1,0 +1,56 @@
+export const meta = {
+  slug: "changelog",
+  category: "project",
+  title: "更新日志",
+  summary: "本项目所有重要变更均会记录在本文件中。",
+  updatedAt: "2025-07-24",
+  order: 61,
+};
+
+本项目所有重要变更均会记录在本文件中。
+
+格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本号遵循[语义化版本](https://semver.org/lang/zh-CN/)。
+
+## [Unreleased]
+
+### 新增
+
+- 文档站点：基于 React Router v8 framework mode（SSG 预渲染）构建独立文档站，替换原 GitHub Actions Pages 的 SPA 部署
+- 文档内容以 MDX 形式管理（15 篇产品文档 + 项目概览 / 更新日志 / 安全策略），支持 JSX 组件与代码高亮
+- 文档站采用与主站一致的 ink 调色板与 accent 主题，含侧边导航、分类聚合、上一篇/下一篇导航
+
+### 变更
+
+- 前端依赖整体升级到最新大版本：React 18 → 19、React Router v7 → v8、Vite 5 → 8、Tailwind CSS 3 → 4、Framer Motion 11 → 12、@vitejs/plugin-react 4 → 6
+- Tailwind 迁移到 v4 CSS-first 配置（`@theme` + `@utility`），移除 `tailwind.config.js`，PostCSS 插件改为 `@tailwindcss/postcss`
+- CI 工作流 Node 版本从 20 升级到 22（react-router 8 要求 Node ≥ 22.22）
+- `package.json` 新增 `engines.node: ">=22.12.0"`
+- Dependabot 配置：移除 major 版本忽略规则（跟踪最新大版本），新增 patch/minor 分组以减少 PR 噪音
+- 修复 react-router RSC CSRF 漏洞（GHSA-qwww-vcr4-c8h2）—— 升级到 8.3.0
+
+### 计划中
+
+- CRUD 与发卡状态机的自动化测试套件
+- `/apps` 分页与全文搜索
+- 认证与多租户组织
+- `order.completed` / `card.issued` / `card.redeemed` 的 Webhook 投递
+- 生产部署指南（反向代理 + 容器编排）
+
+## [1.0.0] - 2025-07-24
+
+### 新增
+
+- 发卡（vending）机制：卡密库存、批量生成、购买时自动发卡、兑换、作废，基于 `available → sold → redeemed → void` 状态机
+- 文档站：6 个分类、15 篇分节文章（快速开始、应用接入、API 参考、订阅与授权、发卡系统、常见问题）
+- FastAPI 后端：`/api/v1` 下覆盖 health、apps、docs、cards、orders、library 的 RESTful 接口
+- 幂等种子脚本 `python -m backend.seed`，从 `src/data` 抄录数据并复刻前端 LCG 卡密码生成
+- 全局 `OrbitalError` 异常处理器，统一返回 `{ "error", "message" }`
+- 多阶段 Dockerfile 与 docker-compose，单服务交付前后端
+- 仓库设施：双许可（MIT OR Apache-2.0）、CONTRIBUTING、SECURITY、CODE_OF_CONDUCT、CHANGELOG
+- GitHub Actions 工作流：CI 构建、前端 CI、Python CI、release、stale、issue triage、workflow 清理、docs
+
+### 变更
+
+- 前端路由迁移至 React Router v7（库模式 SPA）
+- 使用 Framer Motion 实现路由过渡动画
+- 前端开发服务器（Vite）代理 `/api` → 后端 `:8000`

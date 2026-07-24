@@ -1,0 +1,30 @@
+export const meta = {
+  slug: "vending-overview",
+  category: "vending",
+  title: "发卡机制总览",
+  summary: "卡密库存、自动发放与兑换流程。",
+  updatedAt: "2025-07-22",
+  order: 40,
+};
+
+## 什么是发卡
+
+发卡机制允许厂商或管理员预先批量生成卡密（订阅码 / 永久授权码 / 试用码），用户购买或领取后获得一张卡密，兑换即可激活对应权益。
+
+## 自动发卡
+
+当用户在应用详情页完成支付时，系统会从该应用对应计划的可用库存中自动分配一张卡密，并通过页面与邮件即时发放给买家。
+
+## 卡密状态机
+
+卡密有四种状态：`available`（可用）→ `sold`（已发放）→ `redeemed`（已兑换）；任意时刻可 `void`（作废）。
+
+## 状态流转图
+
+卡密状态转换如下：
+
+```text
+available ──purchase──▶ sold ──redeem──▶ redeemed
+    │                     │
+    └──── void ───▶ void ◀┘
+```

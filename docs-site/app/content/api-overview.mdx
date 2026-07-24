@@ -1,0 +1,29 @@
+export const meta = {
+  slug: "api-overview",
+  category: "api",
+  title: "API 总览",
+  summary: "Orbital 提供 RESTful API，用于许可证查询、订单同步与发卡。",
+  updatedAt: "2025-07-21",
+  order: 20,
+};
+
+## Base URL
+
+所有请求指向 `https://api.orbital.dev/v1`。
+
+## 认证
+
+使用 Bearer Token 认证，Token 在厂商控制台的「API 密钥」中生成。
+
+## 示例请求
+
+查询某个许可证的状态：
+
+```bash
+curl https://api.orbital.dev/v1/licenses/LR-7K2A-9FQ4-ZZ01 \
+  -H "Authorization: Bearer sk_live_..."
+```
+
+## 错误处理
+
+错误返回统一 JSON 结构，包含 `code`、`message` 与 `detail` 字段。`429` 表示限流，建议指数退避重试。

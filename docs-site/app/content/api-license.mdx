@@ -1,0 +1,30 @@
+export const meta = {
+  slug: "api-license",
+  category: "api",
+  title: "许可证接口",
+  summary: "查询、激活与吊销许可证。",
+  updatedAt: "2025-07-21",
+  order: 21,
+};
+
+## 激活许可证
+
+将一张卡密兑换为许可证：
+
+```bash
+POST /v1/licenses/redeem
+Content-Type: application/json
+
+{
+  "code": "ORB-ABCD-EFGH-JKLM",
+  "device": { "fingerprint": "fp_...", "platform": "darwin-arm64" }
+}
+```
+
+## 响应
+
+返回 license 对象，包含 `key`、`appId`、`planId`、`seats` 与到期时间。
+
+## 吊销
+
+Owner 可调用 `DELETE /v1/licenses/{key}` 吊销许可证，吊销后该设备会立即失效。

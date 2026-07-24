@@ -8,6 +8,10 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# ── docs-site (React Router framework mode SSG) ──────────────
+docs-site/build/
+docs-site/.react-router/
+
 # ── Python / 后端 ─────────────────────────────────────────────
 __pycache__/
 *.py[cod]

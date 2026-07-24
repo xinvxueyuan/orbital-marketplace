@@ -1,0 +1,20 @@
+export const meta = {
+  slug: "versioning",
+  category: "install",
+  title: "版本与更新分发",
+  summary: "Orbital 支持灰度发布、强制更新与回滚。",
+  updatedAt: "2025-07-19",
+  order: 11,
+};
+
+## 渠道
+
+每个应用可定义 stable / beta / nightly 三个渠道，用户在资料库中按应用切换渠道。
+
+## 灰度
+
+厂商可设置灰度比例（如 10%），系统会按设备指纹随机命中，命中设备会先收到新版本。
+
+## 回滚
+
+若新版本出现问题，厂商可一键回滚到任意历史版本，已升级用户会自动收到降级提示。

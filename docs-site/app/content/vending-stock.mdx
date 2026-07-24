@@ -1,0 +1,34 @@
+export const meta = {
+  slug: "vending-stock",
+  category: "vending",
+  title: "卡密库存管理",
+  summary: "批量生成、导入、作废卡密。",
+  updatedAt: "2025-07-22",
+  order: 41,
+};
+
+## 批量生成
+
+在「发卡」页选择应用与计划，输入数量即可批量生成卡密。生成的卡密初始状态为 `available`。
+
+## 生成请求
+
+通过 API 批量生成卡密：
+
+```bash
+POST /v1/cards/batch
+{
+  "appId": "nova-studio",
+  "planId": "pro",
+  "type": "subscription",
+  "count": 50
+}
+```
+
+## 库存预警
+
+当某应用某计划的可用库存低于阈值（默认 5 张）时，系统会向厂商发送 Webhook 与邮件预警。
+
+## 作废
+
+已发放但未兑换的卡密可作废，作废后无法再兑换。已兑换的卡密不可作废。

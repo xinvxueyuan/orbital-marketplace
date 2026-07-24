@@ -1,0 +1,37 @@
+export const meta = {
+  slug: "publish-app",
+  category: "install",
+  title: "厂商上架应用",
+  summary: "把你的应用发布到 Orbital 商城，触达全球开发者团队。",
+  updatedAt: "2025-07-18",
+  order: 10,
+};
+
+## 申请厂商资质
+
+在「厂商入驻」提交公司信息与开发者资质，审核通过后即可创建应用条目。
+
+## 上传产物
+
+在厂商控制台为每个版本上传签名后的安装包，系统会自动校验签名并生成校验摘要。
+
+## 填写元信息
+
+完善应用名称、分类、截图、定价方案与更新说明。元信息变更需重新审核。
+
+## manifest 示例
+
+每个版本附带一个 manifest 描述文件，格式如下：
+
+```json
+{
+  "appId": "nova-studio",
+  "version": "4.2.0",
+  "channel": "stable",
+  "platforms": ["darwin-arm64", "win32-x64"],
+  "signature": "ed25519:9f3a...",
+  "checksum": "sha256:c2a7...",
+  "size": 284000000,
+  "releaseNotes": ["修复图层混合性能问题", "新增变量绑定 API"]
+}
+```

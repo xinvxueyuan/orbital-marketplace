@@ -1,0 +1,31 @@
+export const meta = {
+  slug: "signature",
+  category: "install",
+  title: "签名与校验",
+  summary: "所有发布产物必须使用厂商私钥签名，客户端在下载时校验。",
+  updatedAt: "2025-07-15",
+  order: 12,
+};
+
+## 签名算法
+
+推荐使用 Ed25519 进行签名，公钥在厂商入驻时上传并由平台公证。
+
+## 签名命令
+
+使用 Orbital CLI 对产物签名：
+
+```bash
+# 生成密钥对
+orbital keys gen --out vendor.key --pub vendor.pub
+
+# 对安装包签名
+orbital sign --key vendor.key \
+  --app nova-studio \
+  --version 4.2.0 \
+  --file NovaStudio-4.2.0.dmg
+```
+
+## 客户端校验
+
+下载完成后客户端会从平台拉取公钥并校验签名，校验失败会拒绝安装并提示用户。
