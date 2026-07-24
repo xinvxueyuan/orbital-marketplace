@@ -6,10 +6,12 @@
 [![Frontend CI](https://github.com/xinvxueyuan/orbital-marketplace/actions/workflows/%F0%9F%A7%AA-frontend.yml/badge.svg)](https://github.com/xinvxueyuan/orbital-marketplace/actions/workflows/%F0%9F%A7%AA-frontend.yml)
 [![Python CI](https://github.com/xinvxueyuan/orbital-marketplace/actions/workflows/%F0%9F%A7%AA-python.yml/badge.svg)](https://github.com/xinvxueyuan/orbital-marketplace/actions/workflows/%F0%9F%A7%AA-python.yml)
 [![License](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue)](#license)
-[![React](https://img.shields.io/badge/React-18-61dafb)](https://react.dev/)
+[![React](https://img.shields.io/badge/React-19-61dafb)](https://react.dev/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-latest-009688)](https://fastapi.tiangolo.com/)
 [![Python](https://img.shields.io/badge/python-3.11+-3776AB)](https://www.python.org/)
-[![Vite](https://img.shields.io/badge/Vite-5-646CFF)](https://vitejs.dev/)
+[![Vite](https://img.shields.io/badge/Vite-8-646CFF)](https://vitejs.dev/)
+[![React Router](https://img.shields.io/badge/React_Router-8-CA4245)](https://reactrouter.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38BDF8)](https://tailwindcss.com/)
 [![Gitmoji](https://img.shields.io/badge/gitmoji-%20%F0%9F%98%9C%20%F0%9F%98%8D-FFDD67.svg?style=flat-square)](https://gitmoji.dev/)
 
 🌐 **Live demo**: https://xinvxueyuan.github.io/orbital-marketplace/ (GitHub Pages, built from `main` via the [`📚-docs.yml`](.github/workflows/%F0%9F%93%9A-docs.yml) workflow)
@@ -18,7 +20,7 @@
 
 ## Project status
 
-Orbital has shipped its `1.0.0` milestone. The current release delivers the vending (card-key) mechanism, the documentation site, the FastAPI backend, and the React Router v7 migration. The API and route surface are stable; subsequent work focuses on hardening, tests, and operational tooling.
+Orbital has shipped its `1.0.0` milestone. The current release delivers the vending (card-key) mechanism, the documentation site, the FastAPI backend, and the React Router v8 / React 19 / Tailwind v4 / Vite 8 migration. The API and route surface are stable; subsequent work focuses on hardening, tests, and operational tooling.
 
 Useful entry points:
 
@@ -38,17 +40,17 @@ Useful entry points:
 - **Vending (card-key) mechanism** — batch card generation, automatic issuance on purchase, redemption, and void, backed by a `available → sold → redeemed → void` state machine.
 - **Library** — single-user demo library showing owned apps, installed state, and card-key redemption.
 - **Documentation site** — in-app docs with categories and sectioned articles (quickstart, app onboarding, API reference, billing, vending, FAQ).
-- **SPA architecture** — React Router v7 in library (SPA) mode with animated route transitions via Framer Motion.
+- **SPA architecture** — React Router v8 in library (SPA) mode with animated route transitions via Framer Motion.
 
 ## Tech stack
 
 **Frontend**
 
-- React 18
-- React Router v7 (library-mode SPA)
-- Vite 5
-- Tailwind CSS
-- Framer Motion
+- React 19
+- React Router v8 (library-mode SPA)
+- Vite 8
+- Tailwind CSS v4 (CSS-first config)
+- Framer Motion v12
 
 **Backend**
 
@@ -59,7 +61,7 @@ Useful entry points:
 
 ## Quick start
 
-> Requires Node.js 20+ and Python 3.11+.
+> Requires Node.js 22+ and Python 3.11+.
 
 ### Frontend
 

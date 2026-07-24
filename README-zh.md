@@ -6,10 +6,12 @@
 [![前端 CI](https://github.com/xinvxueyuan/orbital-marketplace/actions/workflows/%F0%9F%A7%AA-frontend.yml/badge.svg)](https://github.com/xinvxueyuan/orbital-marketplace/actions/workflows/%F0%9F%A7%AA-frontend.yml)
 [![Python CI](https://github.com/xinvxueyuan/orbital-marketplace/actions/workflows/%F0%9F%A7%AA-python.yml/badge.svg)](https://github.com/xinvxueyuan/orbital-marketplace/actions/workflows/%F0%9F%A7%AA-python.yml)
 [![License](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue)](#许可)
-[![React](https://img.shields.io/badge/React-18-61dafb)](https://react.dev/)
+[![React](https://img.shields.io/badge/React-19-61dafb)](https://react.dev/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-latest-009688)](https://fastapi.tiangolo.com/)
 [![Python](https://img.shields.io/badge/python-3.11+-3776AB)](https://www.python.org/)
-[![Vite](https://img.shields.io/badge/Vite-5-646CFF)](https://vitejs.dev/)
+[![Vite](https://img.shields.io/badge/Vite-8-646CFF)](https://vitejs.dev/)
+[![React Router](https://img.shields.io/badge/React_Router-8-CA4245)](https://reactrouter.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38BDF8)](https://tailwindcss.com/)
 [![Gitmoji](https://img.shields.io/badge/gitmoji-%20%F0%9F%98%9C%20%F0%9F%98%8D-FFDD67.svg?style=flat-square)](https://gitmoji.dev/)
 
 🌐 **在线演示**：https://xinvxueyuan.github.io/orbital-marketplace/ （GitHub Pages，由 `main` 分支通过 [`📚-docs.yml`](.github/workflows/%F0%9F%93%9A-docs.yml) 工作流构建）
@@ -18,7 +20,7 @@
 
 ## 项目状态
 
-Orbital 已发布 `1.0.0` 里程碑。当前版本交付了发卡机制、文档站、FastAPI 后端以及 React Router v7 迁移。API 与路由面已稳定，后续工作聚焦于加固、测试与运维工具。
+Orbital 已发布 `1.0.0` 里程碑。当前版本交付了发卡机制、文档站、FastAPI 后端以及 React Router v8 / React 19 / Tailwind v4 / Vite 8 迁移。API 与路由面已稳定，后续工作聚焦于加固、测试与运维工具。
 
 常用入口：
 
@@ -38,17 +40,17 @@ Orbital 已发布 `1.0.0` 里程碑。当前版本交付了发卡机制、文档
 - **发卡机制** — 批量生成卡密、购买时自动发卡、兑换与作废，基于 `available → sold → redeemed → void` 状态机。
 - **资料库** — 单用户演示资料库，展示已拥有应用、安装状态与卡密兑换。
 - **文档站** — 应用内文档，含分类与分节文章（快速开始、应用接入、API 参考、订阅与授权、发卡系统、常见问题）。
-- **SPA 架构** — React Router v7 库模式 SPA，配合 Framer Motion 实现路由过渡动画。
+- **SPA 架构** — React Router v8 库模式 SPA，配合 Framer Motion 实现路由过渡动画。
 
 ## 技术栈
 
 **前端**
 
-- React 18
-- React Router v7（库模式 SPA）
-- Vite 5
-- Tailwind CSS
-- Framer Motion
+- React 19
+- React Router v8（库模式 SPA）
+- Vite 8
+- Tailwind CSS v4（CSS-first 配置）
+- Framer Motion v12
 
 **后端**
 
@@ -59,7 +61,7 @@ Orbital 已发布 `1.0.0` 里程碑。当前版本交付了发卡机制、文档
 
 ## 快速开始
 
-> 需要 Node.js 20+ 与 Python 3.11+。
+> 需要 Node.js 22+ 与 Python 3.11+。
 
 ### 前端
 

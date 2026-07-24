@@ -6,6 +6,15 @@
 
 ## [Unreleased]
 
+### 变更
+
+- 前端依赖整体升级到最新大版本：React 18 → 19、React Router v7 → v8、Vite 5 → 8、Tailwind CSS 3 → 4、Framer Motion 11 → 12、@vitejs/plugin-react 4 → 6
+- Tailwind 迁移到 v4 CSS-first 配置（`@theme` + `@utility`），移除 `tailwind.config.js`，PostCSS 插件改为 `@tailwindcss/postcss`
+- CI 工作流 Node 版本从 20 升级到 22（react-router 8 要求 Node ≥ 22.22）
+- `package.json` 新增 `engines.node: ">=22.12.0"`
+- Dependabot 配置：移除 major 版本忽略规则（跟踪最新大版本），新增 patch/minor 分组以减少 PR 噪音
+- 修复 react-router RSC CSRF 漏洞（GHSA-qwww-vcr4-c8h2）—— 升级到 8.3.0
+
 ### 计划中
 
 - CRUD 与发卡状态机的自动化测试套件
